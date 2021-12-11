@@ -42,7 +42,7 @@ impl Worker {
     {
         for _worker in 0..count {
             let consumer = factory();
-            let _addr = Actor::start_in_arbiter(&Arbiter::new(), move |_| consumer);
+            let _addr = Actor::start_in_arbiter(&Arbiter::new().handle(), move |_| consumer);
             // self.addrs.push(addr.into());
         }
         self
