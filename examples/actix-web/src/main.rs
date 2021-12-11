@@ -57,7 +57,7 @@ impl StreamHandler<Result<ws::Message, ws::ProtocolError>> for MyWs {
             Ok(ws::Message::Ping(msg)) => ctx.pong(&msg),
             Ok(ws::Message::Text(text)) => {
                 let producer = self.producer.clone();
-                producer.do_send(WSJob::Notify(text).into()); //Send to redis
+                producer.do_send(WSJob::Notify(text.to_string()).into()); //Send to redis
             }
             Ok(ws::Message::Binary(bin)) => ctx.binary(bin),
             _ => (),
