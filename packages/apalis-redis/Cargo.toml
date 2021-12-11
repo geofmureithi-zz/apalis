@@ -10,8 +10,8 @@ description = "Redis Storage for Apalis: simple and reliable background processi
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-actix = "0.10"
-actix-rt = "1"
+actix-rt = "2.5.0"
+actix = "0.12.0"
 apalis-core = { path = "../../packages/apalis-core", version = "0.2" }
 redis = { version = "0.20.0" , features = ["async-std-comp"] }
 serde = "1"
